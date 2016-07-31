@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" type="image/png" href="/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Zoomable Image</title>
+    </head>
+    <body>
+        <div id="openseadragon"></div>
+
+
+        <script src='openseadragon/openseadragon.min.js'></script>
+        <script>
+        window.onload = function() {
+            OpenSeadragon({
+                id: "openseadragon",
+                prefixUrl: "openseadragon/images/",
+                tileSources: {
+                    Image: {
+                        xmlns:    "http://schemas.microsoft.com/deepzoom/2008",
+                        Url:      "../output/full_files/",
+                        Format:   "jpg", 
+                        Overlap:  "1", 
+                        TileSize: "254",
+                        Size: {
+                            Height: "6400",
+                            Width:  "7290"
+                        }
+                    }
+                },
+                showRotationControl: false,
+                autoHideControls: true,
+                animationTime: 0.5
+            });
+        }
+        </script>
+    </body>
+</html>

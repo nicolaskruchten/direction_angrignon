@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" /> 
+        <title>Direction Angrignon</title>
+        <!-- external libs from cdnjs -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.min.js"></script>
+    </head>
+    <style>
+        *, a {
+            font-family: Verdana;
+            color: white;
+        }
+
+        body { 
+            text-align: center;
+            background: black;
+        }
+
+        select {
+            font-size: 24px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            $("select").on("change", function(){
+                $($(this).data("station"))
+                    .attr("src", "output/"+$(this).val()+".jpg")
+                    .show();
+            })
+        });
+    </script>
+    <body align="center">
+        <img src="output/header.png" style="width: 350px; margin-top:25px;" />
+        <p>Compare platforms from the Montreal Métro's green line, direction Angrignon. <a href="">More info &raquo;</a>
+        <div id="controls" style="margin: 25px;">
+            <select data-station="#station1">
+                <option value="01-HBG">Honoré-Beaugrand</option>
+                <option value="02-RAD">Radisson</option>
+                <option value="03-LGL">Langelier</option>
+                <option value="04-CDL">Cadillac</option>
+                <option value="05-ASM">Assomption</option>
+                <option value="06-VIA">Viau</option>
+                <option value="07-PIX" selected>Pie-IX</option>
+                <option value="08-JLT">Joliette</option>
+                <option value="09-PFN">Préfontaine</option>
+                <option value="10-FNC">Frontenac</option>
+                <option value="11-PPN">Papineau</option>
+                <option value="12-BDR">Beaudry</option>
+                <option value="13-BUQ">Berri-UQAM</option>
+                <option value="14-STL">Saint-Laurent</option>
+                <option value="15-PDA">Place-des-Arts</option>
+                <option value="16-MCG">McGill</option>
+                <option value="17-PEL">Peel</option>
+                <option value="18-GCC">Guy-Concordia</option>
+                <option value="19-AWT">Atwater</option>
+                <option value="20-LGR">Lionel-Groulx</option>
+                <option value="21-CVX">Charlevoix</option>
+                <option value="22-LSL">Lasalle</option>
+                <option value="23-DLG">De l'Église</option>
+                <option value="24-VRD">Verdun</option>
+                <option value="25-JLC">Jolicoeur</option>
+                <option value="26-MNK">Monk</option>
+                <option value="27-ANG">Angrignon</option>
+                </optgroup>
+            </select>
+            vs
+            <select data-station="#station2">
+                <option value="01-HBG">Honoré-Beaugrand</option>
+                <option value="02-RAD">Radisson</option>
+                <option value="03-LGL">Langelier</option>
+                <option value="04-CDL">Cadillac</option>
+                <option value="05-ASM">Assomption</option>
+                <option value="06-VIA">Viau</option>
+                <option value="07-PIX">Pie-IX</option>
+                <option value="08-JLT">Joliette</option>
+                <option value="09-PFN">Préfontaine</option>
+                <option value="10-FNC">Frontenac</option>
+                <option value="11-PPN">Papineau</option>
+                <option value="12-BDR">Beaudry</option>
+                <option value="13-BUQ">Berri-UQAM</option>
+                <option value="14-STL">Saint-Laurent</option>
+                <option value="15-PDA">Place-des-Arts</option>
+                <option value="16-MCG">McGill</option>
+                <option value="17-PEL" selected>Peel</option>
+                <option value="18-GCC">Guy-Concordia</option>
+                <option value="19-AWT">Atwater</option>
+                <option value="20-LGR">Lionel-Groulx</option>
+                <option value="21-CVX">Charlevoix</option>
+                <option value="22-LSL">Lasalle</option>
+                <option value="23-DLG">De l'Église</option>
+                <option value="24-VRD">Verdun</option>
+                <option value="25-JLC">Jolicoeur</option>
+                <option value="26-MNK">Monk</option>
+                <option value="27-ANG">Angrignon</option>
+            </select>
+        </div>
+        <img id="station1" src="output/07-PIX.jpg" style="height: 100px;" />
+        <img id="station2" src="output/17-PEL.jpg" style="height: 100px;" />
+        <a href="http://nicolas.kruchten.com/" target="_blank"><img src="output/copyright.png" style="width: 150px;" border="0"/></a>
+
+    </body>
+</html>
